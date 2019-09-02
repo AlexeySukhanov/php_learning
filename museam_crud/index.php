@@ -1,8 +1,10 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
+
 $server     = 'localhost';
 $username   = 'root';
 $password   = '';
-$db_name    = 'museam3';
+$db_name    = 'it_museam';
 
 $mysqli = new mysqli( $server, $username, $password, $db_name);
 if ( $mysqli->connect_error ) {
@@ -10,10 +12,21 @@ if ( $mysqli->connect_error ) {
 }
 
 echo 'Соединение установлено';
+//echo '<pre>';
+//print_r( $mysqli );
+//echo '</pre>';
+
+//$mysqli->query('SET NAMES utf8');
+if( $tables_list = $mysqli->query('SELECT *  FROM  persons' ) ) {
+
+    while( $row = $tables_list->fetch_assoc()) {
+        echo '<pre>';
+        print_r( $row );
+        echo '</pre>';
+    }
+} else {
+    echo 'we have a problem';
+}
 
 
-echo '<pre>';
-print_r( $mysqli );
-echo '</pre>';
-
-mysqli_close( $mysqli );
+$mysqli->close();
