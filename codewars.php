@@ -1,18 +1,10 @@
 <?php
 
-function oddCount($n) {
-    $result = array();
-    $i = 1;
-    while( $i < $n ){
-        if( $i % 2 !== 0 ) $result[] = $i;
-        $i++;
+function dnaToRna($str) {
+    for ( $n = 0; n < strlen($str); $n++ ) {
+        $str[$n] = $str[$n] == 'T' ? 'U' : $str[$n];
     }
-    return $result;
-
+    return $str;
 }
 
-$arr = oddCount(17);
-
-echo '<pre>';
-var_dump( $arr );
-echo '</pre>';
+echo dnaToRna('TUTUT');
