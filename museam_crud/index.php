@@ -1,6 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
+// TODO: Создать класс для работы с бд
+// TODO: Попытаться реализовать алгоритм при помощи подготовленных выражений
 $server     = 'localhost';
 $username   = 'root';
 $password   = '';
@@ -12,6 +14,24 @@ if ( $mysqli->connect_error ) {
 }
 
 echo '<h1>Соединение установлено</h1>';
+
+if( $_POST ){
+    echo '$_POST active:<br>';
+
+    foreach( $_POST as $key => $row ) {
+        echo '<pre>';
+        print_r($row);
+        echo '</pre>';
+        foreach( $row as $id => $value ) {
+            $result = $mysqli->query('UPDATE persons SET ' . $key . '="' . $value . '" WHERE id ="' . ($id + 1) .'"');
+            if( !$result ) {
+                die('Внести изменение в столбец ' . $id . ' не удалось');
+            }
+        }
+    }
+}  else echo 'post not active';
+
+
 
 //$mysqli->query('SET NAMES utf8');
 if( $result = $mysqli->query('SELECT *  FROM  persons' ) ) {
@@ -32,16 +52,16 @@ if( $result = $mysqli->query('SELECT *  FROM  persons' ) ) {
                     echo '<b>' . $row['id'] .'</b>';
                 echo '</td>';
                 echo '<td>';
-                    echo '<input type="text" name="first_name' . $row['id'] . '" value="'. $row['first_name'] .'">';
+                    echo '<input type="text" name="first_name[]" value="'. $row['first_name'] .'">';
+                echo '</td>';echo 'lol';
+                echo '<td>';
+                    echo '<input type="text" name="last_name[]" value="' . $row['last_name'] . '">';
                 echo '</td>';
                 echo '<td>';
-                    echo '<input type="text" name="last_name' . $row['id'] . '" value="' . $row['last_name'] . '">';
+                    echo '<textarea name="description[]">' . $row['description'] . '</textarea>';
                 echo '</td>';
                 echo '<td>';
-                    echo '<textarea name="description' . $row['id'] . '">' . $row['description'] . '</textarea>';
-                echo '</td>';
-                echo '<td>';
-                    echo '<input type="text" name="citienship" value="' . $row['citienship'] . '">';
+                    echo '<input type="text" name="citienship[]" value="' . $row['citienship'] . '">';
                 echo '</td>';
             echo '</tr>';
         }
@@ -52,13 +72,6 @@ if( $result = $mysqli->query('SELECT *  FROM  persons' ) ) {
 } else {
     echo 'we have a problem';
 }
-
-if( $_POST ){
-    echo 'post active:<br>';
-    echo '<pre>';
-        print_r($_POST);
-    echo '</pre>';
-}  else echo 'post not active';
 
 $result->free();
 $mysqli->close();
