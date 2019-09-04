@@ -1,14 +1,30 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-// TODO: Создать класс для работы с бд
-// TODO: Попытаться реализовать алгоритм при помощи подготовленных выражений
-$server     = 'localhost';
-$username   = 'root';
-$password   = '';
-$db_name    = 'it_museam';
+class Database
+{
+    public $host;
+    public $user;
+    public $pass;
+    public $db;
 
-$mysqli = new mysqli( $server, $username, $password, $db_name);
+    public function __construct( $host, $user, $pass, $db){
+        $this->host = $host;
+        $this->user = $user;
+        $this->pass = $pass;
+        $this->db   = $db;
+    }
+}
+
+
+// COMPLETED TODO: Создать класс для работы с бд
+// TODO: Попытаться реализовать алгоритм при помощи подготовленных выражений
+// TODO: Реализовать подключение  с помощью PDO
+// TODO: Вынести конфиги в отдельный файл
+
+$connection = new Database( 'localhost', 'root', '', 'it_museam' );
+
+$mysqli = new mysqli( $connection->host, $connection->user, $connection->pass, $connection->db);
 if ( $mysqli->connect_error ) {
     die( 'Ошибка соединения : (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error );
 }
