@@ -1,6 +1,12 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
+// COMPLETED TODO: Создать класс для работы с бд
+// COMPLETED TODO: Попытаться реализовать алгоритм при помощи подготовленных выражений
+// TODO: Реализовать подключение  с помощью PDO
+// TODO: Вынести конфиги в отдельный файл
+
+
 class Database
 {
     public $host;
@@ -16,12 +22,6 @@ class Database
     }
 }
 
-
-// COMPLETED TODO: Создать класс для работы с бд
-// TODO: Попытаться реализовать алгоритм при помощи подготовленных выражений
-// TODO: Реализовать подключение  с помощью PDO
-// TODO: Вынести конфиги в отдельный файл
-
 $connection = new Database( 'localhost', 'root', '', 'it_museam' );
 
 $mysqli = new mysqli( $connection->host, $connection->user, $connection->pass, $connection->db);
@@ -32,25 +32,42 @@ if ( $mysqli->connect_error ) {
 echo '<h1>Соединение установлено</h1>';
 
 if( $_POST ){
-    echo '$_POST active:<br>';
-
+    echo '$_POST exist.<br>';
     foreach( $_POST as $key => $row ) {
+
+        // Создание подготовленного выражения
+        $query = "UPDATE persons SET " . $key . "=? WHERE id=?";
+        $statement = $mysqli->prepare( $query );
+
+        if(!$statement){
+            echo 'statement fail!!';
+        }
+        echo $key;
         echo '<pre>';
         print_r($row);
         echo '</pre>';
         foreach( $row as $id => $value ) {
-            $result = $mysqli->query('UPDATE persons SET ' . $key . '="' . $value . '" WHERE id ="' . ($id + 1) .'"');
-            if( !$result ) {
+            $id++;
+            if(!$statement->bind_param('si', $value, $id)){
+                echo "Не удалось привязать параметры: (" . $statement->errno . ") " . $statement->error;
+            }
+            if( !$statement->execute() ) {
                 die('Внести изменение в столбец ' . $id . ' не удалось');
             }
         }
     }
 }  else echo 'post not active';
 
-
+//$result = $mysqli->query('SELECT * FROM persons');
+//print_r( $fields_count = $result->fetch_row() );
+//echo '<br>';
+//echo $result->num_rows;
+//echo '<hr>';
 
 //$mysqli->query('SET NAMES utf8');
 if( $result = $mysqli->query('SELECT *  FROM  persons' ) ) {
+
+
 
     echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '">  ';
 
@@ -62,22 +79,23 @@ if( $result = $mysqli->query('SELECT *  FROM  persons' ) ) {
             echo '<td><b>DESCRIPTION</b></td>';
             echo '<td><b>CITIENSHIP</b></td>';
         echo '</tr>';
-        while( $row = $result->fetch_assoc()) {
+        while( $row = $result->fetch_object()) {
+            print_r($row);
             echo '<tr>';
                 echo '<td>';
-                    echo '<b>' . $row['id'] .'</b>';
+                    echo '<b>' . $row->id .'</b>';
                 echo '</td>';
                 echo '<td>';
-                    echo '<input type="text" name="first_name[]" value="'. $row['first_name'] .'">';
-                echo '</td>';echo 'lol';
-                echo '<td>';
-                    echo '<input type="text" name="last_name[]" value="' . $row['last_name'] . '">';
+                    echo '<input type="text" name="first_name[]" value="'. $row->first_name .'">';
                 echo '</td>';
                 echo '<td>';
-                    echo '<textarea name="description[]">' . $row['description'] . '</textarea>';
+                    echo '<input type="text" name="last_name[]" value="' . $row->last_name . '">';
                 echo '</td>';
                 echo '<td>';
-                    echo '<input type="text" name="citienship[]" value="' . $row['citienship'] . '">';
+                    echo '<textarea name="description[]">' . $row->description . '</textarea>';
+                echo '</td>';
+                echo '<td>';
+                    echo '<input type="text" name="citienship[]" value="' . $row->citienship . '">';
                 echo '</td>';
             echo '</tr>';
         }
