@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Уичтожаем сессию:
+if( isset( $_GET['exit'] ) && $_GET['exit'] == 'true' ) {
+    echo 'session vars unset<br>';
+    unset( $_SESSION['login'], $_SESSION['password'] );
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,3 +21,10 @@
     <a href="authorize.php">For Petya</a>
 </body>
 </html>
+
+<?php
+echo '<br><br>session id: ' . session_id();
+echo '<pre>';
+print_r( $_SESSION );
+echo '</pre>';
+?>
