@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Secret info</title>
 </head>
 <body>
-$END$
+    Here i want to share secrets with my friend Petya.
 </body>
 </html>
