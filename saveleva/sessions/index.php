@@ -27,4 +27,10 @@ echo '<br><br>session id: ' . session_id();
 echo '<pre>';
 print_r( $_SESSION );
 echo '</pre>';
+
+echo $_SERVER['HTTP_REFERER'];
+
+$_SERVER['HTTP_REFERER'] = 'lol';
+echo '<br>';
+echo 'new referer: ' . $_SERVER['HTTP_REFERER'];
 ?>
