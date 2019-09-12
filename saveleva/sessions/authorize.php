@@ -20,9 +20,6 @@ if ( preg_match("#^$server_root#", $_SERVER['HTTP_REFERER']) ) { // Провер
         } else {
             echo 'Неверный ввод логина или параля, попробуйте еще раз.';
         }
-
-
-
     }
 
     echo '
