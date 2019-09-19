@@ -1,10 +1,7 @@
 <?php
 
-function dnaToRna($str) {
-    for ( $n = 0; n < strlen($str); $n++ ) {
-        $str[$n] = $str[$n] == 'T' ? 'U' : $str[$n];
-    }
-    return $str;
+function remove(string $s): string {
+    preg_match_all( '/(.*)!$/s', $s, $r);
+    return $r[1][0];
 }
 
-echo dnaToRna('TUTUT');
