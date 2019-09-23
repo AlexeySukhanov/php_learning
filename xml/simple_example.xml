@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<note title="Письмо">
+    <to>Маша Петрова</to>
+    <body>Привет, Маша! Как у тебя дела? У меня все хорошо. Собираюсь приехать к тебе в гости.</body>
+    <from>Вася Иванов</from>
+</note>    
