@@ -1,0 +1,39 @@
+<?xml version='1'?>
+<collection>
+    <person id="10">
+        <name>
+            <first>Nick</first>
+            <last>Petrov</last>
+        </name>
+        <birth>
+            <day>23</day>
+            <month>12</month>
+            <year>1989</year>
+        </birth>
+        <email>nick@dcp.ru</email>
+    </person>
+    <person id="20">
+        <name>
+            <first>Bob</first>
+            <last>Ivanov</last>
+        </name>
+        <birth>
+            <day>03</day>
+            <month>05</month>
+            <year>1990</year>
+        </birth>
+        <email>bo@dcp.ru</email>
+    </person>
+    <person id="30">
+        <name>
+            <first>Alesha</first>
+            <last>Puchnin</last>
+        </name>
+        <birth>
+            <day>12</day>
+            <month>03</month>
+            <year>1978</year>
+        </birth>
+        <email>puchnin@dcp.ru</email>
+    </person>
+</collection>
