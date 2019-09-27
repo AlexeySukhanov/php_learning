@@ -44,13 +44,11 @@ XML;
 
 //$mail = simplexml_load_file( '../mail.xml' ); // Взять данные из файла
 
-if ( ! $persons = simplexml_load_string( $persons_string ) ) { // Взять данные из строки
-    die( 'Ошибка при разборе элемента' );
-}
+( $persons = @simplexml_load_string( $persons_string ) ) || die('Получить данные не удалось');  // Взять данные из строки
 
-echo 'Количество элементов в коллекции: ' . $count = $persons->count() . '<br>'; // Количество элементов в коллекции
-echo 'Имя корневого элемента: ' . $root =  $persons->getName() . '<br>'; // Имя корневого элемента
-echo 'Значение атрибута корневого элемента: ' . $root_attr_value = $persons->attributes() . '<br>'; // Значение атрибута корневого элемента
+echo 'Количество элементов в коллекции: ' . $count = $persons->count() . '<br>';
+echo 'Имя корневого элемента: ' . $root =  $persons->getName() . '<br>';
+echo 'Значение атрибута корневого элемента: ' . $root_attr_value = $persons->attributes() . '<br>';
 
 echo '<hr><hr>';
 
