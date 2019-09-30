@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * source: http://www.webmasters.by/articles/web-programming/2778-parsing-xml-with-simplexml.html
+ */
 // xml с пространством имен
 $languages_string = <<<XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -20,7 +22,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/">
 </languages>
 XML;
 
-( $languages = simplexml_load_string( $languages_string ) ) || die( 'Получить даные не удалось' );
+( $languages = simplexml_load_string( $languages_string ) ) || die( 'Получить данные не удалось' );
 
 echo '<pre>';
 print_r( $languages );
