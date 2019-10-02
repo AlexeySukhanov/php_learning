@@ -61,7 +61,6 @@ echo '<hr><hr>';
 
 echo '<h2>Перебор каждого элемента коллекции:</h2>';
 foreach( $persons as $person ) {
-
     $current_person = array(); // Массив для результирующего вывода
     $current_person['id'] =  (string) $person->attributes()['id']; // Получение атрибута, альтернативный способ: $person['id']
     $current_person['fio'] = implode(' ', (array) $person->name); // Получение и склейка значений тегов

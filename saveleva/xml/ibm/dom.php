@@ -1,6 +1,7 @@
 <?php
 
 /*
+ * Пример создания XML документа с помощью DOM
  * Источник: https://www.ibm.com/developerworks/ru/library/x-xmlphp1/index.html
  */
 
