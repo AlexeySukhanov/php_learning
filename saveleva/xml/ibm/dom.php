@@ -7,7 +7,6 @@
 
 // Инициирует объект DOMDocument для работы с XML
 $dom = new DOMDocument('1.0');
-$dom->formatOutput = true;
 
 // Создает элементы (экземпляры класса DOMElement)
 $books = $dom->createElement('books');
