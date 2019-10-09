@@ -11,7 +11,7 @@
 </head>
 <body>
 
-Привет, {$name|upper}!
+Привет, {$name|upper}! {* Вывод переменной с модификатором *}
 <br>
 Ваш почтовый индекс: {$index[0]}
 <br>
@@ -19,8 +19,20 @@
 <br>
 Ваш адрес: {$city}, {$street}
 <br>
-
 <p>{#Intro#}</p>
+
+
+{* ФУНКЦИИ ШАБЛОНОВ: *}
+
+{* Загружает конфигурационный файл *}
+{config_load file="main.conf" section="Customer"}
+{#pageTitle#}
+
+
+
+
+
+
 
 </body>
 </html>
