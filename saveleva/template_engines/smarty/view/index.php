@@ -27,6 +27,14 @@ $smarty->assign( array(
 $smarty->append( 'index', '123654' );
 
 
+// config_load() - Загружает конфигурационный файл
+$smarty->configLoad('main.conf', 'Customer'); // Вывод глобальных переменных производится с помощью символов
+
+
+
+
+
+
 
 
 $smarty->display( 'index.tpl' ); // Выводим обработанный шаблон
