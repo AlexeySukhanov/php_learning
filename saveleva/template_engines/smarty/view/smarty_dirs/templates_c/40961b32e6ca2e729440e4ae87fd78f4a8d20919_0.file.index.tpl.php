@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 01:10:52
+/* Smarty version 3.1.33, created on 2019-10-10 01:39:05
   from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9e68fcc3a606_93201796',
+  'unifunc' => 'content_5d9e6f995b7c05_28034888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40961b32e6ca2e729440e4ae87fd78f4a8d20919' => 
     array (
       0 => '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl',
-      1 => 1570662651,
+      1 => 1570664344,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9e68fcc3a606_93201796 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9e6f995b7c05_28034888 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,15 +45,25 @@ function content_5d9e68fcc3a606_93201796 (Smarty_Internal_Template $_smarty_tpl)
 , <?php echo $_smarty_tpl->tpl_vars['street']->value;?>
 
 <br>
-
 <p><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'Intro');?>
 </p>
+
+
 
 <?php
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "main.conf", "Customer", 0);
 ?>
 
 <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'pageTitle');?>
+
+
+<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "varname", "test", null);?>
+    <p>captured content</p>
+<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+echo $_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'varname');?>
+ <?php echo $_smarty_tpl->tpl_vars['test']->value;?>
+ 
+
 
 
 

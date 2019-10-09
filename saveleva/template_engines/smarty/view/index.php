@@ -34,3 +34,4 @@ $page = $smarty->fetch( 'index.tpl' );
 $smarty->display( 'index.tpl' );
 
 
+

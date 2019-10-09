@@ -24,10 +24,16 @@
 
 {* ФУНКЦИИ ШАБЛОНОВ: *}
 
-{* Загружает конфигурационный файл *}
+{* config_load - Загружает конфигурационный файл *}
 {config_load file="main.conf" section="Customer"}
 {#pageTitle#}
 
+{* capture - собирает в переменную выходные данные шаблона вместо того, чтобы выводить их на экран *}
+{capture name="varname1" assign="varname2"}
+    <p>captured content</p>
+{/capture}
+{$smarty.capture.varname1} {* Пример вывода переменной захваченой функцией capture *}
+{$varname2} {* Пример вывода переменной захваченой функцией capture *}
 
 
 
