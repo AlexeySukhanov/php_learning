@@ -13,10 +13,8 @@ $smarty->cache_dir    = 'smarty_dirs/cache/';
 
 // assign() - присвоение значений переменным
 $smarty->assign( 'name', 'Нина' ); // Присваиваем переменной значение "Нина"
-
 $index = '876123';
 $smarty->assign( 'index', $index ); // Присваеваем переменной smarty значение переменной PHP
-
 $smarty->assign( array(
     'city' => 'Пирогова',
     'street' => 'Новосибирск'
@@ -26,15 +24,13 @@ $smarty->assign( array(
 // append() - Присоеденяет значение переменной к указанному массиву, если первым аргументом указаны строка, то эта переменная преобразуетсяв массив
 $smarty->append( 'index', '123654' );
 
-
 // config_load() - Загружает конфигурационный файл
 $smarty->configLoad('main.conf', 'Customer'); // Вывод глобальных переменных производится с помощью символов
 
+// fetch() - Получает обработанный шаблон
+$page = $smarty->fetch( 'index.tpl' );
+
+// display() - Отображает обработанный шаблон
+$smarty->display( 'index.tpl' );
 
 
-
-
-
-
-
-$smarty->display( 'index.tpl' ); // Выводим обработанный шаблон
