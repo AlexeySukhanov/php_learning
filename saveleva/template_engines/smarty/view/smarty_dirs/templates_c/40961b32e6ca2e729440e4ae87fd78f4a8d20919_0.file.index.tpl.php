@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 09:52:03
+/* Smarty version 3.1.33, created on 2019-10-10 10:11:16
   from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9ee323a06217_58489040',
+  'unifunc' => 'content_5d9ee7a47fe3f3_87175741',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40961b32e6ca2e729440e4ae87fd78f4a8d20919' => 
     array (
       0 => '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl',
-      1 => 1570693922,
+      1 => 1570695074,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9ee323a06217_58489040 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9ee7a47fe3f3_87175741 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -64,18 +64,33 @@ echo $_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'varname1');?>
  <?php echo $_smarty_tpl->tpl_vars['varname2']->value;?>
  
 <?php
-$__section_section_name_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['loop']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_section_name_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['loop1']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_section_name_0_total = $__section_section_name_0_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_section_name'] = new Smarty_Variable(array());
 if ($__section_section_name_0_total !== 0) {
 for ($__section_section_name_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index'] = 0; $__section_section_name_0_iteration <= $__section_section_name_0_total; $__section_section_name_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index']++){
 ?>
-    <li><?php echo $_smarty_tpl->tpl_vars['loop']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index'] : null)];?>
+    <li><?php echo $_smarty_tpl->tpl_vars['loop1']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index'] : null)];?>
+</li> <?php
+}
+}
+?>
+
+<br>
+
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['loop2']->value, 'item', false, 'key');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+?>
+    <li>Ключ: <?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+; Значение: <?php echo $_smarty_tpl->tpl_vars['item']->value;?>
 </li>
 <?php
 }
 }
-?>
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
 
 
 

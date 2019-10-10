@@ -35,10 +35,18 @@
 {$smarty.capture.varname1} {* Пример вывода переменной захваченой функцией capture *}
 {$varname2} {* Пример вывода переменной захваченой функцией capture *}
 
-{* section - создаёт цикл обходящий элементы массива $loop  *}
-{section name="section_name" loop=$loop}
-    <li>{$loop[section_name]}</li> {* Для получения текущего элемента необходимо указать имя секции в кваратных скобках *}
+{* section - создаёт цикл обходящий элементы массива $loop1  *}
+{section name="section_name" loop=$loop1}
+    <li>{$loop1[section_name]}</li> {* Для получения текущего элемента необходимо указать имя секции в кваратных скобках *}
 {/section}
+
+<br>
+
+{* foreach - альтернатива section, создает цикл обходящий элементы массива $loop. позволяет получать ключи массива, используя атрибут key *}
+{foreach from=$loop2 key=$key item=$item}
+    <li>Ключ: {$key}; Значение: {$item}</li>
+{/foreach}
+
 
 
 
