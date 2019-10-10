@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 01:39:05
+/* Smarty version 3.1.33, created on 2019-10-10 09:52:03
   from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9e6f995b7c05_28034888',
+  'unifunc' => 'content_5d9ee323a06217_58489040',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40961b32e6ca2e729440e4ae87fd78f4a8d20919' => 
     array (
       0 => '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl',
-      1 => 1570664344,
+      1 => 1570693922,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9e6f995b7c05_28034888 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9ee323a06217_58489040 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,12 +57,26 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "main.conf"
 <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'pageTitle');?>
 
 
-<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "varname", "test", null);?>
+<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "varname1", "varname2", null);?>
     <p>captured content</p>
 <?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-echo $_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'varname');?>
- <?php echo $_smarty_tpl->tpl_vars['test']->value;?>
+echo $_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'varname1');?>
+ <?php echo $_smarty_tpl->tpl_vars['varname2']->value;?>
  
+<?php
+$__section_section_name_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['loop']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_section_name_0_total = $__section_section_name_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_section_name'] = new Smarty_Variable(array());
+if ($__section_section_name_0_total !== 0) {
+for ($__section_section_name_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index'] = 0; $__section_section_name_0_iteration <= $__section_section_name_0_total; $__section_section_name_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index']++){
+?>
+    <li><?php echo $_smarty_tpl->tpl_vars['loop']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_section_name']->value['index'] : null)];?>
+</li>
+<?php
+}
+}
+?>
+
 
 
 

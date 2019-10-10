@@ -24,7 +24,7 @@
 
 {* ФУНКЦИИ ШАБЛОНОВ: *}
 
-{* config_load - Загружает конфигурационный файл *}
+{* config_load - загружает конфигурационный файл *}
 {config_load file="main.conf" section="Customer"}
 {#pageTitle#}
 
@@ -34,6 +34,11 @@
 {/capture}
 {$smarty.capture.varname1} {* Пример вывода переменной захваченой функцией capture *}
 {$varname2} {* Пример вывода переменной захваченой функцией capture *}
+
+{* section - создаёт цикл обходящий элементы массива $loop  *}
+{section name="section_name" loop=$loop}
+    <li>{$loop[section_name]}</li> {* Для получения текущего элемента необходимо указать имя секции в кваратных скобках *}
+{/section}
 
 
 
