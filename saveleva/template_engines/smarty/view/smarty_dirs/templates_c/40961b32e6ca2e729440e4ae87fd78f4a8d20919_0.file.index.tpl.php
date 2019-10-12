@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 10:40:37
+/* Smarty version 3.1.33, created on 2019-10-12 17:50:45
   from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9eee85e5aa08_07448027',
+  'unifunc' => 'content_5da1f6556fbcb4_80374366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40961b32e6ca2e729440e4ae87fd78f4a8d20919' => 
     array (
       0 => '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/templates/index.tpl',
-      1 => 1570696837,
+      1 => 1570895444,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9eee85e5aa08_07448027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da1f6556fbcb4_80374366 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -93,7 +93,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php if ($_smarty_tpl->tpl_vars['name']->value == "Жопа") {?>
     <p>Добро пожаловать, Жопа</p>
-<?php } elseif ($_smarty_tpl->tpl_vars['name']->value == "Нинва") {?>
+<?php } elseif ($_smarty_tpl->tpl_vars['name']->value == "Нина") {?>
     <p>Добро пожаловать, Нина </p>
 <?php } else { ?>
     <p>Представься, мразь</p>

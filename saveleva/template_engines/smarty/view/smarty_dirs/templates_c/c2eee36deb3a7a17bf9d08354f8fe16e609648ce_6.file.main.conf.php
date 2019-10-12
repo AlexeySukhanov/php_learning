@@ -1,13 +1,13 @@
-<?php /* Smarty version 3.1.33, created on 2019-10-10 00:20:07
+<?php /* Smarty version 3.1.33, created on 2019-10-12 17:50:19
          compiled from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/configs/main.conf' */ ?>
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 00:20:07
+/* Smarty version 3.1.33, created on 2019-10-12 17:50:19
   from '/home/user/Work/domains/php-learning.loc/php_learning/saveleva/template_engines/smarty/view/smarty_dirs/configs/main.conf' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9e5d17124075_39380894',
+  'unifunc' => 'content_5da1f63b90de30_57597182',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9e5d17124075_39380894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da1f63b90de30_57597182 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, array (
   'sections' => 
   array (

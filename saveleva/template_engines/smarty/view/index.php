@@ -1,15 +1,6 @@
 <?php
 
-require 'libs/Smarty.class.php'; // Подключаем файл с описанием класса
-
-$smarty  = new Smarty(); // Создаём экземпляр класса Smarty
-
-// Указываем местонахождение директорий
-$smarty->template_dir = 'smarty_dirs/templates/';
-$smarty->compile_dir  = 'smarty_dirs/templates_c/';
-$smarty->config_dir   = 'smarty_dirs/configs/';
-$smarty->cache_dir    = 'smarty_dirs/cache/';
-
+require 'init.php';
 
 // assign() - присвоение значений переменным
 $smarty->assign( 'name', 'Нина' ); // Присваиваем переменной значение "Нина"
@@ -35,9 +26,6 @@ $smarty->assign( 'loop2', array(
 
 // append() - Присоеденяет значение переменной к указанному массиву, если первым аргументом указаны строка, то эта переменная преобразуетсяв массив
 $smarty->append( 'index', '123654' );
-
-// config_load() - Загружает конфигурационный файл
-$smarty->configLoad('main.conf', 'Customer'); // Вывод глобальных переменных производится с помощью символов
 
 // fetch() - Получает обработанный шаблон
 $page = $smarty->fetch( 'index.tpl' );
