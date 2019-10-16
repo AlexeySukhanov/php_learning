@@ -82,4 +82,3 @@ echo '$arrayVariable = ' . $arrayVariable . '<br/>';
     echo $var . '<br/>';
     echo $var2 . '<br/>';
     echo $var3 . '<br/>';
-    test4
