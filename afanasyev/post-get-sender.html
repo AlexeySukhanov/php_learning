@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Post and Get Sender</title>
 </head>
 <body>
+
+<form action="post-get.php" method="get">
+    <label for="name">Имя</label><br/>
+    <input type="text" name="name" id="name">
+    <br/>
+    <label for="email">Email</label><br/>
+    <input type="email" name="email" id="email">
+    <br/>
+    <label>Gender<br />
+        <input type="radio" name="sex" value="1" checked>Man<br/>
+        <input type="radio" name="sex" value="2">Woman<br/>
+    </label>
+
+    <input type="checkbox" name="save" value="1" checked="checked">Save<br />
+
+    <br/>
+    <input type="submit">
+</form>
+
+<br/>
+<br/>
+
+<form action="post-get.php" method="post">
+    <label for="name">Имя</label><br/>
+    <input type="text" name="name" id="name">
+    <br/>
+    <label for="email">Email</label><br/>
+    <input type="email" name="email" id="email">
+    <br/>
+    <label>Gender<br />
+        <input type="radio" name="sex" value="1" checked>Man<br/>
+        <input type="radio" name="sex" value="2">Woman<br/>
+    </label>
+
+    <input type="checkbox" name="save" value="1" checked="checked">Save<br />
+
+    <br/>
+    <input type="submit">
+</form>
 
 </body>
 </html>
